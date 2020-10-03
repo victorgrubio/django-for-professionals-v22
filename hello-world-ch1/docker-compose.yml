@@ -1,0 +1,10 @@
+version: '3.7'
+
+
+services:
+  web:
+    build: '3.7'
+    volumes: 
+      - .:/code
+    ports:
+      - 8000:8000
