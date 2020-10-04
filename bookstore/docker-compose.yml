@@ -3,6 +3,9 @@ version: '3.7'
 services:
   web:
     build: .
+    environment:
+      - SECRET_KEY=tp5q!!c=uq5ko%u=+)9xu0@tpv@s7@teipxv1v4p$c*#eiqzj@
+      - DEBUG=1
     volumes:
       - .:/code
     ports:
