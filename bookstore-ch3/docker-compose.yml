@@ -9,10 +9,11 @@ services:
       - 8000:8000
     depends_on:
       - db
+    user: ${CURRENT_UID}
   db:
     image: postgres:11
     volumes:
       - postgres_data:/var/lib/postgresql/data/
 
 volumes:
-  postgres_data
+  postgres_data:
