@@ -1,2 +1,4 @@
 staticfiles
 .env
+media/covers
+!media/covers/.gitkeep

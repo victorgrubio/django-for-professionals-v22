@@ -177,3 +177,7 @@ EMAIL_USE_TLS = True
 
 # Email account
 DEFAULT_FROM_EMAIL = 'info@victorgarciarubio.com'
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
