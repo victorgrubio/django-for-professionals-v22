@@ -4,8 +4,10 @@
 {% block title %}Home{% endblock title%}
 {% block content %}
 <h1>Homepage</h1>
-<img class="bookcover" src="{% static 'images/djangoforprofessionals.jpg' %}"><br/>
 {% if user.is_authenticated %}
+    <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}" method="get">
+        <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+    </form>
     Hi {{ user.email }}
     <p><a href="{% url 'account_logout' %}">Log Out</a></p>
 {% else %}
