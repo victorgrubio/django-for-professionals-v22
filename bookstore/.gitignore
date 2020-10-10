@@ -4,5 +4,3 @@ staticfiles
 .env.prod
 media/covers
 !media/covers/.gitkeep
-__pycache__
-*.jpg

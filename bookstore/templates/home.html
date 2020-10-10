@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load socialaccount %}
+{% block title %}Home{% endblock title%}
+{% block content %}
+<h1>Homepage</h1>
+{% if user.is_authenticated %}
+    <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}" method="get">
+        <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+    </form>
+    Hi {{ user.email }}
+    <p><a href="{% url 'account_logout' %}">Log Out</a></p>
+{% else %}
+    <p>You are not logged in</p>
+    <div>
+        <a href="{% url 'account_login' %}">Log In</a>
+    </div>
+    <div>
+        <a href="{% provider_login_url 'github' %}">Sign Up with Github</a>
+    </div>
+    <div>
+        <a href="{% url 'account_signup' %}">Sign Up with email</a>
+    </div>
+{% endif %}
+{% endblock content%}
