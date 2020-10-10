@@ -11,11 +11,10 @@
     <p>Price: {{ book.price }}</p>
     <div>
         <h3>Reviews</h3>
-        <ul>
             {% for review in book.reviews.all %}
-            <li>{{review.review}} {{review.author}}</li>
+            <strong>{{review.author}}</strong>
+            <p>{{review.review}}</p>
             {% endfor %}
-        </ul>
     </div>
 </div>
 {% endblock content %}

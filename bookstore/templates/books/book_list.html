@@ -2,8 +2,8 @@
 {% block title %}Books{%endblock%}
 
 {% block content %}
-{% if not perms.books.special_status %}
-<a href="{% url 'orders' %}" class="btn btn-success">Purchase All Books</a>
+{% if not books.perms.special_status %}
+    <a href="{% url 'orders' %}" class="btn btn-success">Purchase All Books</a>
 {% endif %}
 {% for book in book_list %}
     <div>
